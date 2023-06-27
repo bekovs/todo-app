@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "title": "Buy milk",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "Take out the trash",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "Write a react tutorial",
+      "status": false,
+      "id": 3
+    }
+  ]
+}
