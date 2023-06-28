@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './store/hooks';
 import { fetchTodos } from './store/todos/todosActions';
+import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
 
@@ -15,7 +16,7 @@ const App = () => {
 
   return (
     <div>
-      <h2>Hello there!</h2>
+      <AppRoutes />
     </div>
   );
 };
