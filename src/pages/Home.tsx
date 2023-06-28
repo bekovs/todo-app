@@ -1,9 +1,9 @@
-import React from 'react';
+import TodosList from "../components/Todos/TodosList";
 
 const Home = () => {
   return (
     <div>
-      <h2>Home page</h2>
+      <TodosList />
     </div>
   );
 };

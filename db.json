@@ -14,6 +14,21 @@
       "title": "Write a react tutorial",
       "status": false,
       "id": 3
+    },
+    {
+      "title": "Make bbq",
+      "status": true,
+      "id": 4
+    },
+    {
+      "title": "It's new todo",
+      "status": false,
+      "id": 5
+    },
+    {
+      "title": "Write a poem",
+      "status": false,
+      "id": 6
     }
   ]
 }
