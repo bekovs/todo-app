@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { FC, useState, FormEvent } from "react";
 import { createTodo } from "../../store/todos/todosActions";
+import { AppDispatch } from "../../store/store";
 
-const AddTodo = ({ dispatch }: any) => {
+const AddTodo: FC<{dispatch: AppDispatch}> = ({ dispatch }): JSX.Element => {
     const [todo, setTodo] = useState({
         title: "",
         status: false,
     });
 
-    const handleSubmit = (event: any): void => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
         if(!todo.title.trim()){
-          return
+          return;
         }
         dispatch(createTodo(todo));
         setTodo({

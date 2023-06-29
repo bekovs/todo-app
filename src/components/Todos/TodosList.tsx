@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { fetchTodos } from '../../store/todos/todosActions';
+import { fetchTodos, updateTodo } from '../../store/todos/todosActions';
 import "./Todos.css"
 import AddTodo from './AddTodo';
 
@@ -19,10 +19,10 @@ const TodosList = () => {
       <AddTodo dispatch={dispatch} />
       <div className="todos__list">
         {
-          todos.map(({title, status}, index) => (
-            <div key={index}>
+          todos.map(({title, status, id}) => (
+            <div key={id}>
               <p>{title}</p>
-              <button>{status ? "Undone" : "Done"}</button>
+              <button onClick={() => dispatch(updateTodo({title, status: !status, id}))}>{status ? "Undone" : "Done"}</button>
             </div>
           ))
         }
