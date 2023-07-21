@@ -73,6 +73,19 @@
   border-bottom: none;
 }
 
+.todos__list_buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.delete-btn {
+  background-color: rgb(236, 236, 236);
+}
+
+.delete-btn:hover {
+  background-color: rgb(216, 216, 216);
+}
+
 @media screen and (max-width: 1000px) {
   .todos__list {
     width: 70%;

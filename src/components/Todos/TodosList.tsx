@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { fetchTodos, updateTodo } from '../../store/todos/todosActions';
+import { deleteTodo, fetchTodos, updateTodo } from '../../store/todos/todosActions';
 import "./Todos.css"
 import AddTodo from './AddTodo';
 
@@ -21,8 +21,11 @@ const TodosList = () => {
         {
           todos.map(({title, status, id}) => (
             <div key={id}>
-              <p>{title}</p>
-              <button onClick={() => dispatch(updateTodo({title, status: !status, id}))}>{status ? "Undone" : "Done"}</button>
+              <p style={status ? { textDecoration: "line-through" } : {}}>{title}</p>
+              <div className='todos__list_buttons'>
+                <button onClick={() => dispatch(updateTodo({title, status: !status, id}))}>{status ? "Undone" : "Done"}</button>
+                <button className='delete-btn' onClick={() => dispatch(deleteTodo(id))}>Delete</button>
+              </div>
             </div>
           ))
         }

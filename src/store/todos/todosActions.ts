@@ -29,3 +29,12 @@ export const updateTodo = createAsyncThunk<
     await axios.patch(`${API}/${updatedData.id}`, updatedData);
     dispatch(fetchTodos());
 });
+
+export const deleteTodo = createAsyncThunk<
+    void,
+    number | undefined,
+    { dispatch: AppDispatch }
+>("todos/deleteTodo", async (id, { dispatch }) => {
+    await axios.delete(`${API}/${id}`);
+    dispatch(fetchTodos());
+});
