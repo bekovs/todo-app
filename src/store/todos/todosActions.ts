@@ -17,7 +17,7 @@ export const createTodo = createAsyncThunk<
     Todo,
     { dispatch: AppDispatch }
 >("todos/createTodo", async (newTodo: Todo, { dispatch }) => {
-    await axios.post(API, newTodo);
+    await axios.post(API, {...newTodo, date: Date.now()});
     dispatch(fetchTodos());
 });
 

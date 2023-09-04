@@ -1,7 +1,8 @@
 export interface Todo {
   id?: number,
   title: string,
-  status: boolean
+  status: boolean,
+  date: number,
 }
 
 export interface TodoState {

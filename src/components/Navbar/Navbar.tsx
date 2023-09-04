@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import "./Navbar.css"
+import "./Navbar.scss"
 
 const Navbar = () => {
   return (
     <div className='navbar'>
       <ul>
-        <Link to="/"><li>Home</li></Link>
-        <Link to="/archive"><li>Archive</li></Link>
+        <Link to="/"><li>Todos</li></Link>
       </ul>
     </div>
   );

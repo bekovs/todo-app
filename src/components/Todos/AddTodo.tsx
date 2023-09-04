@@ -6,17 +6,19 @@ const AddTodo: FC<{dispatch: AppDispatch}> = ({ dispatch }): JSX.Element => {
     const [todo, setTodo] = useState({
         title: "",
         status: false,
+        date: 0,
     });
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
         if(!todo.title.trim()){
-          return;
+            return;
         }
         dispatch(createTodo(todo));
         setTodo({
           title: "",
           status: false,
+          date: 0,
         })
     };
 
